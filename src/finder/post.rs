@@ -43,7 +43,7 @@ _navi_input | _navi_map_fn | _navi_nonewline"#
 fn get_column(text: String, column: Option<u8>, delimiter: Option<&str>) -> String {
     if let Some(c) = column {
         let mut result = String::from("");
-        let re = regex::Regex::new(delimiter.unwrap_or(r"\s\s+")).expect("Invalid regex");
+        let re = regex::Regex::new(delimiter.unwrap_or(r"\s+")).expect("Invalid regex");
         for line in text.split('\n') {
             if (line).is_empty() {
                 continue;
