@@ -11,7 +11,8 @@ pub enum Shell {
     Zsh,
     Fish,
     Elvish,
-    Nushell
+    Nushell,
+    PowerShell
 }
 
 #[derive(Error, Debug)]

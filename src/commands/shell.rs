@@ -14,6 +14,7 @@ impl Display for Shell {
             Self::Fish => "fish",
             Self::Elvish => "elvish",
             Self::Nushell => "nushell",
+            Self::PowerShell => "powershell"
         };
 
         write!(f, "{s}")
@@ -36,6 +37,7 @@ impl Runnable for Input {
             Shell::Fish => include_str!("../../shell/navi.plugin.fish"),
             Shell::Elvish => include_str!("../../shell/navi.plugin.elv"),
             Shell::Nushell => include_str!("../../shell/navi.plugin.nu"),
+            Shell::PowerShell => include_str!("../../shell/navi.plugin.ps1"),
         };
 
         println!("{content}");
