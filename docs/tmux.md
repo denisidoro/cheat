@@ -5,7 +5,7 @@ You can use **navi** as a [Tmux](https://github.com/tmux/tmux/wiki) widget to re
 Add these lines to your Tmux config file to access **navi** by pressing `prefix + C-g`.
 
 ```sh
-bind-key -T prefix C-g split-window \
+bind-key -N "Open Navi (cheat sheets)" -T prefix C-g split-window \
   "$SHELL --login -i -c 'navi --print | head -n 1 | tmux load-buffer -b tmp - ; tmux paste-buffer -p -t {last} -b tmp -d'"
 ```
 
