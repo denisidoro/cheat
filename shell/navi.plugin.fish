@@ -1,29 +1,19 @@
 function _navi_smart_replace
-    set -l current_process (commandline -p | string trim)
+    set --local query (commandline --current-process | string trim)
 
-    if test -z "$current_process"
-        commandline -i (navi --print)
-    else
-        set -l best_match (navi --print --best-match --query "$current_process")
-
-        if not test "$best_match" >/dev/null
+    if test -n "$query"
+        set --local best_match (navi --print --query "$query" --best-match)
+        if test -n "$best_match"
+            commandline --current-process $best_match
             return
-        end
-
-        if test -z "$best_match"
-            commandline -p (navi --print --query "$current_process")
-        else if test "$current_process" != "$best_match"
-            commandline -p $best_match
-        else
-            commandline -p (navi --print --query "$current_process")
         end
     end
 
-    commandline -f repaint
+    set --local candidate (navi --print --query "$query")
+    if test -n "$candidate"
+        commandline --current-process $candidate
+    end
 end
 
-if test $fish_key_bindings = fish_default_key_bindings
-    bind \cg _navi_smart_replace
-else
-    bind -M insert \cg _navi_smart_replace
-end
+bind \cg _navi_smart_replace
+bind --mode insert \cg _navi_smart_replace
