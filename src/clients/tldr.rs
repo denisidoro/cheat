@@ -7,7 +7,8 @@ lazy_static! {
     pub static ref NON_VAR_CHARS_REGEX: Regex = Regex::new(r"[^\da-zA-Z_]").expect("Invalid regex");
 }
 
-static VERSION_DISCLAIMER: &str = "tldr-c-client (the default one in Homebrew) doesn't support markdown files, so navi can't use it.
+static VERSION_DISCLAIMER: &str =
+    "tldr-c-client (the default one in Homebrew) doesn't support markdown files, so navi can't use it.
 The recommended client is tealdeer(https://github.com/dbrgn/tealdeer).";
 
 fn convert_tldr_vars(line: &str) -> String {
