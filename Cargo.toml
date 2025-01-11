@@ -24,16 +24,16 @@ regex = { version = "1.7.3", default-features = false, features = [
    "unicode-perl",
 ] }
 clap = { version = "4.2.1", features = ["derive", "cargo"] }
-crossterm = "0.26.1"
+crossterm = "0.28.0"
 lazy_static = "1.4.0"
-etcetera = "0.7.1"
+etcetera = "0.8.0"
 walkdir = "2.3.3"
 shellwords = "1.1.0"
 anyhow = "1.0.70"
-thiserror = "1.0.40"
-strip-ansi-escapes = "0.1.1"
+thiserror = "2.0.0"
+strip-ansi-escapes = "0.2.0"
 edit = "0.1.4"
-remove_dir_all = "0.8.2"
+remove_dir_all = "1.0.0"
 serde = { version = "1.0.159", features = ["derive"] }
 serde_yaml = "0.9.21"
 dns_common_derive = { version = "0.2.1" }
@@ -41,7 +41,7 @@ dns_common = { version = "0.2.1", default-features = false, features = [
    "yaml",
    "json",
 ] }
-unicode-width = "0.1.10"
+unicode-width = "0.2.0"
 
 [target.'cfg(windows)'.dependencies]
 dunce = "1"
